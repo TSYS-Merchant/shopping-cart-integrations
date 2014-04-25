@@ -3,6 +3,12 @@ shopping-cart-integrations
 
 Plugins that integrate Merchant Warehouse's payment processing solution into various online shopping carts
 
+# Supported Shopping Carts
+
+## Magento
+
+[Magento](http://magento.com/) offers flexible, scalable eCommerce solutions designed to help you grow and succeed online. Magento's cost-effective technology platform makes it possible for you to control the content, functionality, look and feel of your online store.
+
 # Source code, issues, and feature enhancements
 
 [MW's Shopping Cart Plugins' source code](https://github.com/merchantwarehouse/shopping-cart-integrations) is hosted on GitHub, along with all of our other Open Source projects. All issues and feature enhancements are being tracked in our the [GitHub Issue Tracker](https://github.com/merchantwarehouse/shopping-cart-integrations/issues?state=open).
