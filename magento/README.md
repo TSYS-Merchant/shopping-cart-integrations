@@ -4,6 +4,8 @@
 
 The Magento ecommerce platform provides a plug in architecture to self integrate payment and processing products.
 
+Merchant Warehouse is offering two Magento plugins - one supporting Credit & Debit cards, and one supporting Gift cards. These plugins may be used separately or together.
+
 # Quick Usage Guide
 
 ![billing information](.README/BillingInformation.PNG)
