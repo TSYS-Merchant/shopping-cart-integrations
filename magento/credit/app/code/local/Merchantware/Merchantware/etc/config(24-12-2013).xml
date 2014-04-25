@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<config>
+	<modules>
+        <Merchantware_Merchantware>
+            <version>0.1.0</version>
+        </Merchantware_Merchantware>
+    </modules>
+	<global>
+		<models>
+			<Merchantware_Merchantware>
+				<class>Merchantware_Merchantware_Model</class>
+			</Merchantware_Merchantware>
+		</models>
+		<helpers>
+			<Merchantware_Merchantware>
+				<class>Merchantware_Merchantware_Helper</class>
+			</Merchantware_Merchantware>
+		</helpers>
+		<blocks>
+			<Merchantware_Merchantware>
+				<class>Merchantware_Merchantware_Block</class>
+			</Merchantware_Merchantware>
+		</blocks>				
+	</global>
+	<frontend>
+        <routers>
+            <merchantware>
+                <use>standard</use>
+                <args>
+                    <module>Merchantware_Merchantware</module>
+                    <frontName>merchantware</frontName>
+                </args>
+            </merchantware>
+        </routers>
+        <layout>
+            <updates>
+                <merchantware>
+                    <file>merchantware_merchantware.xml</file>
+                </merchantware>
+            </updates>
+        </layout>		
+    </frontend>
+	<default>
+		<payment>
+			<merchantware_payment>
+				<model>Merchantware_Merchantware/merchantware</model>
+				<payment_action>SALE</payment_action>
+				<active>1</active>
+				<title>Merchantware HostedCheckout</title>
+				<order_status>pending</order_status>				
+			</merchantware_payment>
+		</payment>
+	</default>
+</config>

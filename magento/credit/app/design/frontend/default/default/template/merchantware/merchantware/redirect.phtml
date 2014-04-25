@@ -1,0 +1,36 @@
+<div align="center">
+	<br /><br /><br />
+<img src="<?php echo $this->getSkinUrl('merchantware/loading.gif', array("_secure"=> true)) ?>" alt="<?php echo $this->__('Loading...please wait.') ?>" /><br/><?php echo $this->__('Loading...please wait.') ?>
+</div>
+<?php 
+$optimizedfor = Mage::getStoreConfig('payment/merchantware_payment/optimizedfor');
+$testMode = Mage::getStoreConfig('payment/merchantware_payment/test_mode');
+$optimizedformode = Mage::getStoreConfig('payment/merchantware_payment/optimizedformode');
+$optimizedfortest = Merchantware_Merchantware_Model_Source_Optimizedfor::DESKTOP;
+$optimizedformodetest = Merchantware_Merchantware_Model_Source_Optimizedformode::TEST;
+if($optimizedfor == $optimizedfortest) {
+	if($testMode == 1 && $optimizedformode == $optimizedformodetest) {
+		$redirectUrl = Merchantware_Merchantware_Model_Merchantware::TEST_WEB_REDIRECT_URL;
+	}else{
+		$redirectUrl = Merchantware_Merchantware_Model_Merchantware::LIVE_WEB_REDIRECT_URL;
+	}
+}else{
+	if($testMode == 1 && $optimizedformode == $optimizedformodetest) {
+		$redirectUrl = Merchantware_Merchantware_Model_Merchantware::TEST_MOBILE_REDIRECT_URL;
+	}else{
+		$redirectUrl = Merchantware_Merchantware_Model_Merchantware::LIVE_MOBILE_REDIRECT_URL;
+	}
+}
+?>
+<form name="frmCheckout" id="frmCheckout" method="post" action="<?php echo $redirectUrl?>" >
+	<input type="hidden" name="TransportKey" value="<?php echo $this->getTransportkey(); ?>" />	
+</form>
+<script type="text/javascript">
+    function submitForm() { // submits form
+    document.getElementById("frmCheckout").submit();
+}
+if (document.getElementById("frmCheckout")) {
+    setTimeout("submitForm()", 3000); // set timout 
+}
+</script>
+

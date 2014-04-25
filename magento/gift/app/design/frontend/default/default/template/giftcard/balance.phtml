@@ -1,0 +1,28 @@
+<form id="merchantware-giftcard-form" action="<?php echo $this->getUrl('giftcard/index/balance') ?>" method="post">
+	<h2><?php echo $this->__('Gift Card') ?></h2>
+    <p>Enter the code from your gift card below and click the button to check it's balance.</p>
+    <div class="discount-form">
+		<label for="giftcard_code"><?php echo $this->__('Gift Card Code') ?></label>
+    	<div class="input-box">
+       		<input class="input-text" id="giftcard_code" name="giftcard_code" value="" />
+    	</div>
+    	<div class="buttons-set">
+    		<button type="button" title="<?php echo $this->__('Check Gift Card Balance') ?>" class="button" onclick="merchantwareGiftcardForm.submit(false)" value="<?php echo $this->__('Check Gift Card Balance') ?>"><span><span><?php echo $this->__('Check Gift Card Balance') ?></span></span></button>
+   		</div>
+    </div>
+</form>
+<script type="text/javascript">
+
+//<![CDATA[
+
+var merchantwareGiftcardForm = new VarienForm('merchantware-giftcard-form');
+
+// Submit the form
+merchantwareGiftcardForm.submit = function (isRemove) {
+    $('giftcard_code').addClassName('required-entry');
+    return VarienForm.prototype.submit.bind(merchantwareGiftcardForm)();
+}
+
+//]]>
+
+</script>

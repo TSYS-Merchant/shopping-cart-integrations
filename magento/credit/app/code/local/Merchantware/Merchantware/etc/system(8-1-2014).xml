@@ -1,0 +1,397 @@
+<?xml version="1.0" ?>
+<config>
+	<sections>
+		<payment>
+			<groups>
+				<merchantware_payment translate="label" module="Merchantware_Merchantware">
+					<label>Merchant Warehouse</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>100</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>					
+					<fields>
+						<logo_title translate="label">
+							<label><![CDATA[<div class="mw_logo">The MerchantWARE&reg; Transport&trade; Platform is hosted solution that provides enhanced security through SSL, tokenization and end-to-end encryption.</div>]]></label>						
+							<frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+						</logo_title>						
+						<active translate="label">
+							<label>Enabled</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>2</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+						</active>
+						<title translate="label">
+							<label>Title</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>3</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</title>
+						<order_status translate="label">
+							<label>New Order Status</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_order_status_new</source_model>
+							<sort_order>4</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+						</order_status>
+						<test_mode translate="label">
+							<label>Test Mode</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>5</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+						</test_mode>
+						<site_id translate="label">
+							<label>Site ID</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>6</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</site_id>
+						<key translate="label">
+							<label>Key</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>7</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</key>
+						<name translate="label">
+							<label>Name</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>8</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</name>
+						<dba translate="label">
+							<label>DBA</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>9</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</dba>						
+						<allowspecific translate="label">
+							<label>Payment from Applicable Countries</label>
+							<frontend_type>allowspecific</frontend_type>
+							<sort_order>10</sort_order>
+							<source_model>adminhtml/system_config_source_payment_allspecificcountries</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+						</allowspecific>
+						<specificcountry translate="label">
+							<label>Payment from Specific Countries</label>
+							<frontend_type>multiselect</frontend_type>
+							<sort_order>11</sort_order>
+							<source_model>adminhtml/system_config_source_country</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</specificcountry>
+						<debug translate="label">
+							<label>Debug Mode</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>12</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+						</debug>						
+						<min_order_total translate="label">
+							<label>Minimum Order Total</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>13</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+						</min_order_total>
+						<max_order_total translate="label">
+							<label>Maximum Order Total</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>14</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+						</max_order_total>
+						<sort_order translate="label">
+							<label>Sort Order</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>15</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+						</sort_order>						
+						<trantype translate="label">
+							<label>Transaction type</label>
+							<frontend_type>select</frontend_type>
+							<source_model>Merchantware_Merchantware/Transactiontype</source_model>
+							<sort_order>16</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+						</trantype>
+						<logo_location translate="label">
+							<label>Logo Location</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>17</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+						</logo_location>
+						<optimizedfor translate="label">
+							<label>Optimized For</label>
+							<frontend_type>select</frontend_type>
+							<source_model>Merchantware_Merchantware/Source_Optimizedfor</source_model>
+							<sort_order>18</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+						</optimizedfor>
+						<optimizedformode translate="label">
+							<label>Optimized For Mode</label>
+							<frontend_type>select</frontend_type>
+							<source_model>Merchantware_Merchantware/Source_Optimizedformode</source_model>
+							<sort_order>19</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+						</optimizedformode>						
+					</fields>					
+					<fields>
+						<merchantware_payment_display_color type="group" translate="label comment tooltip">
+                                <label>Display Color</label>
+                                <frontend_type>text</frontend_type>
+                                <show_in_default>1</show_in_default>
+                                <show_in_website>1</show_in_website>
+                                <show_in_store>1</show_in_store>
+                                <sort_order>20</sort_order>																
+                                <fields>
+									<display_color_title translate="label">
+										<label><![CDATA[The DisplayColors structure provides customization of certain display elements on the Transport.Web and Transport.Mobile pages. All of the fields in the DisplayColors structure must be a valid hexadecimal HTML color code in RRGGBB format.]]></label>						
+										<frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+										<sort_order>1</sort_order>
+										<show_in_default>1</show_in_default>
+										<show_in_website>1</show_in_website>
+										<show_in_store>0</show_in_store>
+									</display_color_title>
+                                    <screen_background translate="label">
+										<label>Screen Background</label>
+										<frontend_type>text</frontend_type>
+										<sort_order>18</sort_order>
+										<show_in_default>1</show_in_default>
+										<show_in_website>1</show_in_website>
+										<show_in_store>0</show_in_store>
+										<!--<tooltip>Don't have a PayPal account? Simply enter your email address.</tooltip>-->
+									</screen_background>
+									<container_background translate="label">
+										<label>Container-Background</label>
+										<frontend_type>text</frontend_type>
+										<sort_order>19</sort_order>
+										<show_in_default>1</show_in_default>
+										<show_in_website>1</show_in_website>
+										<show_in_store>0</show_in_store>
+									</container_background>
+									<container_font translate="label">
+										<label>Container-Font</label>
+										<frontend_type>text</frontend_type>
+										<sort_order>20</sort_order>
+										<show_in_default>1</show_in_default>
+										<show_in_website>1</show_in_website>
+										<show_in_store>0</show_in_store>
+									</container_font>
+									<container_helpfont translate="label">
+										<label>Container-HelpFont</label>
+										<frontend_type>text</frontend_type>
+										<sort_order>21</sort_order>
+										<show_in_default>1</show_in_default>
+										<show_in_website>1</show_in_website>
+										<show_in_store>0</show_in_store>
+									</container_helpfont>
+									<container_border translate="label">
+										<label>Container-Border</label>
+										<frontend_type>text</frontend_type>
+										<sort_order>22</sort_order>
+										<show_in_default>1</show_in_default>
+										<show_in_website>1</show_in_website>
+										<show_in_store>0</show_in_store>
+									</container_border>
+									<logo_background translate="label">
+										<label>Logo-Background</label>
+										<frontend_type>text</frontend_type>
+										<sort_order>23</sort_order>
+										<show_in_default>1</show_in_default>
+										<show_in_website>1</show_in_website>
+										<show_in_store>0</show_in_store>
+									</logo_background>
+									<logo_border translate="label">
+										<label>Logo-Border</label>
+										<frontend_type>text</frontend_type>
+										<sort_order>24</sort_order>
+										<show_in_default>1</show_in_default>
+										<show_in_website>1</show_in_website>
+										<show_in_store>0</show_in_store>
+									</logo_border>
+									<tooltip_background translate="label">
+										<label>Tooltip-Background</label>
+										<frontend_type>text</frontend_type>
+										<sort_order>25</sort_order>
+										<show_in_default>1</show_in_default>
+										<show_in_website>1</show_in_website>
+										<show_in_store>0</show_in_store>
+									</tooltip_background>
+									<tooltip_border translate="label">
+										<label>Tooltip-Border</label>
+										<frontend_type>text</frontend_type>
+										<sort_order>26</sort_order>
+										<show_in_default>1</show_in_default>
+										<show_in_website>1</show_in_website>
+										<show_in_store>0</show_in_store>
+									</tooltip_border>
+									<textbox_background translate="label">
+										<label>Textbox-Background</label>
+										<frontend_type>text</frontend_type>
+										<sort_order>27</sort_order>
+										<show_in_default>1</show_in_default>
+										<show_in_website>1</show_in_website>
+										<show_in_store>0</show_in_store>
+									</textbox_background>
+									<textbox_border translate="label">
+										<label>Textbox-Border</label>
+										<frontend_type>text</frontend_type>
+										<sort_order>28</sort_order>
+										<show_in_default>1</show_in_default>
+										<show_in_website>1</show_in_website>
+										<show_in_store>0</show_in_store>
+									</textbox_border>
+									<textbox_focusbackground translate="label">
+										<label>Textbox-Focusbackground</label>
+										<frontend_type>text</frontend_type>
+										<sort_order>29</sort_order>
+										<show_in_default>1</show_in_default>
+										<show_in_website>1</show_in_website>
+										<show_in_store>0</show_in_store>
+									</textbox_focusbackground>
+									<textbox_focusborder translate="label">
+										<label>Textbox-Focusborder</label>
+										<frontend_type>text</frontend_type>
+										<sort_order>30</sort_order>
+										<show_in_default>1</show_in_default>
+										<show_in_website>1</show_in_website>
+										<show_in_store>0</show_in_store>
+									</textbox_focusborder>
+									<textbox_font translate="label">
+										<label>Textbox-Font</label>
+										<frontend_type>text</frontend_type>
+										<sort_order>31</sort_order>
+										<show_in_default>1</show_in_default>
+										<show_in_website>1</show_in_website>
+										<show_in_store>0</show_in_store>
+									</textbox_font>
+								</fields>
+						</merchantware_payment_display_color>
+					</fields>					
+					<fields>	
+						<merchantware_payment_display_options type="group" translate="label">
+                                <label>Display Options</label>
+                                <frontend_type>text</frontend_type>
+                                <show_in_default>1</show_in_default>
+                                <show_in_website>1</show_in_website>
+                                <show_in_store>1</show_in_store>
+                                <sort_order>21</sort_order>
+                                <fields>
+									<display_options_title translate="label">
+										<label><![CDATA[The DisplayOptions structure provides additional customization features for the Transport.Web page. These values are ignored by the Transport.Mobssssile page.]]></label>						
+										<frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+										<sort_order>1</sort_order>
+										<show_in_default>1</show_in_default>
+										<show_in_website>1</show_in_website>
+										<show_in_store>0</show_in_store>
+									</display_options_title>
+									<align_left translate="label">
+										<label>Align Left</label>
+										<frontend_type>select</frontend_type>
+										<source_model>adminhtml/system_config_source_yesno</source_model>
+										<sort_order>32</sort_order>
+										<show_in_default>1</show_in_default>
+										<show_in_website>1</show_in_website>
+										<show_in_store>0</show_in_store>
+									</align_left>
+									<card_number_no_mask translate="label">
+										<label>Card Number No Mask</label>
+										<frontend_type>select</frontend_type>
+										<source_model>adminhtml/system_config_source_yesno</source_model>
+										<sort_order>33</sort_order>
+										<show_in_default>1</show_in_default>
+										<show_in_website>1</show_in_website>
+										<show_in_store>0</show_in_store>
+									</card_number_no_mask>
+									<details_hide translate="label">
+										<label>Details Hide</label>
+										<frontend_type>select</frontend_type>
+										<source_model>adminhtml/system_config_source_yesno</source_model>
+										<sort_order>34</sort_order>
+										<show_in_default>1</show_in_default>
+										<show_in_website>1</show_in_website>
+										<show_in_store>0</show_in_store>
+									</details_hide>
+									<downgrade_message_hide translate="label">
+										<label>Downgrade Message Hide</label>
+										<frontend_type>select</frontend_type>
+										<source_model>adminhtml/system_config_source_yesno</source_model>
+										<sort_order>35</sort_order>
+										<show_in_default>1</show_in_default>
+										<show_in_website>1</show_in_website>
+										<show_in_store>0</show_in_store>
+									</downgrade_message_hide>
+									<message_hide translate="label">
+										<label>Message Hide</label>
+										<frontend_type>select</frontend_type>
+										<source_model>adminhtml/system_config_source_yesno</source_model>
+										<sort_order>36</sort_order>
+										<show_in_default>1</show_in_default>
+										<show_in_website>1</show_in_website>
+										<show_in_store>0</show_in_store>
+									</message_hide>						
+									<tooltip_hide translate="label">
+										<label>Tooltip Hide</label>
+										<frontend_type>select</frontend_type>
+										<source_model>adminhtml/system_config_source_yesno</source_model>
+										<sort_order>37</sort_order>
+										<show_in_default>1</show_in_default>
+										<show_in_website>1</show_in_website>
+										<show_in_store>0</show_in_store>
+									</tooltip_hide>
+									<native_buttons translate="label">
+										<label>Native Buttons</label>
+										<frontend_type>select</frontend_type>
+										<source_model>adminhtml/system_config_source_yesno</source_model>
+										<sort_order>38</sort_order>
+										<show_in_default>1</show_in_default>
+										<show_in_website>1</show_in_website>
+										<show_in_store>0</show_in_store>
+									</native_buttons>
+								</fields>
+						</merchantware_payment_display_options>																	
+					</fields>
+				</merchantware_payment>
+			</groups>
+		</payment>
+	</sections>
+</config>

@@ -1,0 +1,80 @@
+<?php
+
+// If the user wants to remove the gift card from this order, remove it from the session
+if($this->getRequest()->getParam('reset')){
+	Mage::getSingleton('core/session')->unsGiftcardAmount();
+	Mage::getSingleton('core/session')->unsGiftcardCode();
+}
+
+// Let's get the code and amount of this card
+$gcCode = Mage::getSingleton('core/session')->getGiftcardCode();
+$gcAmount = Mage::getSingleton('core/session')->getGiftcardAmount();
+$gcLimit = Mage::getSingleton('core/session')->getGiftcardLimit() ?>
+
+<form id="merchantware-giftcard-form" action="<?php echo $this->getUrl('giftcard') ?>" method="post">
+  <div class="discount">
+    <h2><?php echo $this->__('Gift Card') ?></h2>
+    <div class="discount-form"><?php 
+	
+		if($gcAmount > 0){ ?>
+        	You are using the following Gift Card:<br />
+            <ul><li><strong>Card:</strong>  <?=$gcCode?></li>
+            <li><strong>Balance:</strong> <?=Mage::helper('core')->currency($gcAmount, true, false);?></li>
+            <li><strong>Gift Card Amount Applied:</strong> <?=Mage::helper('core')->currency($gcLimit, true, false);?></li>
+            </ul>
+            <br/>
+            <hr size='1'/>
+            <br/>
+      		<label for="giftcard_limit"><?php echo $this->__('Applied gift card amount:') ?></label>            
+      		<div class="input-box">
+        		<input class="input-text" type="number" step="0.01" id="giftcard_limit" name="giftcard_limit" value="<?=$gcLimit?>" />
+      		</div>
+      		<div class="buttons-set">
+        		<button type="button" title="<?php echo $this->__('Remove Gift Card') ?>" class="button" onclick="merchantwareGiftcardForm.submit(true, false)" value="<?php echo $this->__('Remove Gift Card') ?>"><span><span><?php echo $this->__('Remove Gift Card') ?></span></span></button>
+        		<button type="button" title="<?php echo $this->__('Apply Changes') ?>" class="button" onclick="merchantwareGiftcardForm.submit(false, true)" value="<?php echo $this->__('Apply Changes') ?>"><span><span><?php echo $this->__('Apply Changes') ?></span></span></button>
+      		</div><?php 
+        }
+      	else{ ?>
+      		<label for="giftcard_code"><?php echo $this->__('Enter your gift card code') ?></label>
+      		<div class="input-box">
+        		<input class="input-text" id="giftcard_code" name="giftcard_code" value="" />
+      		</div>
+      		<div class="buttons-set">
+        		<button type="button" title="<?php echo $this->__('Apply Gift Card') ?>" class="button" onclick="merchantwareGiftcardForm.submit(false, false)" value="<?php echo $this->__('Apply Gift Card') ?>"><span><span><?php echo $this->__('Apply Gift Card') ?></span></span></button>
+      		</div><?php 
+		} ?>
+    </div>
+  </div>
+  <input type="hidden" name="remove" id="remove-coupon" value="0" />
+  <input type="hidden" name="limit" id="set-limit" value="0" />
+</form>
+<script type="text/javascript">
+
+//<![CDATA[
+
+var merchantwareGiftcardForm = new VarienForm('merchantware-giftcard-form');
+
+// Submit the form
+merchantwareGiftcardForm.submit = function (isRemove, setLimit) {
+    if(isRemove) {
+        $('remove-coupon').value = "1";
+        $('set-limit').value = "0";
+        $('giftcard_limit').removeClassName('required-entry');		
+    }
+	else if(setLimit){
+        $('giftcard_limit').addClassName('required-entry');		
+        $('set-limit').value = "1";
+        $('remove-coupon').value = "0";
+	}
+	else {
+        $('giftcard_code').addClassName('required-entry');
+        $('remove-coupon').value = "0";
+        $('set-limit').value = "0";
+    }
+	
+    return VarienForm.prototype.submit.bind(merchantwareGiftcardForm)();
+}
+
+//]]>
+
+</script>
