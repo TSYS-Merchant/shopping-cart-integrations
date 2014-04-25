@@ -1,5 +1,7 @@
 #magento
 
+[Magento](http://magento.com/) offers flexible, scalable eCommerce solutions designed to help you grow and succeed online. Magento's cost-effective technology platform makes it possible for you to control the content, functionality, look and feel of your online store.
+
 The Magento ecommerce platform provides a plug in architecture to self integrate payment and processing products.
 
 # Quick Usage Guide
