@@ -28,6 +28,8 @@ After you've entered your billing and payment information, you'll be redirected 
 
 # Installation
 
+Installing Merchant Warehouse's Magento plugins is easy. Once you have signed up for a Merchant Warehouse account, you just need to enter in a few details to be up and running. Please follow the simple guides below:
+
 * [Credit Card Plugin Installaton Guide](https://github.com/merchantwarehouse/shopping-cart-integrations/wiki/Magento-Credit-Plugin-Installation-Guide)
 * [Gift Card Plugin Installation Guide](https://github.com/merchantwarehouse/shopping-cart-integrations/wiki/Magento-Gift-Plugin-Installation-Guide)
 
