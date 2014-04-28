@@ -8,9 +8,21 @@ Merchant Warehouse is offering two Magento plugins - one supporting Credit & Deb
 
 # Quick Usage Guide
 
+## Entering Billing Information
+
+As part of the Magento checkout process, your customers will be prompted for their shipping and billing information. This info will be passed on to other screens later in the checkout process.
+
 ![billing information](.README/BillingInformation.PNG)
 
+## Entering Payment Information
+
+Your customers will then be prompted to pay using Merchant Warehouse's hosted payments page.
+
 ![payment information](.README/PaymentInformation.PNG)
+
+## Entering Payment Details
+
+After you've entered your billing and payment information, you'll be redirected to MerchantWarehouse's Transport.Web hosted payments page. Here, your customers will be prompted for their credit card information. Most fields will be pre-populated with the information entered on the previous screens. When they're done entering their payment info, they'll be redirected back to your site, and asked to review & finalize their order.
 
 ![payment details](.README/PaymentDetails.PNG)
 
