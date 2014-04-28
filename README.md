@@ -26,4 +26,4 @@ We also love bug reports & feature requests. You can file bugs and feature reque
 * What output you saw
 * How the problem can be reproduced. A small example project zipped up or code snippet that demonstrates or reproduces the issue is always appreciated.
 
-You can also always find help on the [shooping cart integrations Google Group](https://groups.google.com/forum/#!forum/stumps-project). TODO
+You can also always find help on our [shopping cart integrations Google Group](https://groups.google.com/forum/#!forum/mw-magento-plugin).
