@@ -21,7 +21,7 @@ Merchant Warehouse is offering two Magento plugins - one supporting Credit & Deb
 
 # Source code, issues, and feature enhancements
 
-[MW Magento Plugins' source code](https://github.com/merchantwarehouse/shopping-cart-integrations) is hosted on GitHub, along with all of our other Open Source projects. All issues and feature enhancements are being tracked in our the [GitHub Issue Tracker](https://github.com/merchantwarehouse/shopping-cart-integrations/issues?state=open).
+[MW Magento Plugins' source code](https://github.com/merchantwarehouse/shopping-cart-integrations) is hosted on GitHub, along with all of our other Open Source projects. All issues and feature enhancements are being tracked in our the [GitHub Issue Tracker](https://github.com/merchantwarehouse/shopping-cart-integrations/issues?state=open). Please tag issues with the "magento" label.
 
 # Downloading
 Currently, Merchant Warehouse’s magento plugins are only available as a source download.
