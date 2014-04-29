@@ -4,7 +4,7 @@ class Merchantware_Merchantware_Model_ResponseParser extends Varien_Simplexml_El
 	public function isSuccessful() {
 		$this->registerXPathNamespace('transport','http://transport.merchantware.net/v4/');
 		$_result = $this->xpath('//transport:TransportKey');
-		if($_result[0]) {
+		if(count($_result)) {
 			return true;
 		}
 		return false;
