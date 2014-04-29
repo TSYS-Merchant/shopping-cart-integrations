@@ -17,9 +17,16 @@ class Merchantware_Merchantware_Model_ResponseParser extends Varien_Simplexml_El
 		$error_message = '';
 		foreach ($this->xpath('//transport:Messages') as $index => $item){			
 			$message = (array)$item;
-			foreach($message['Message'] as $tag => $value) {		
-				$error_message .= $tag." : ".$value."\n";
-				$_ret->setData('Reason', $error_message);
+			
+			// If $message not empty go log, but if empty return 'No error was returned'
+			if(!empty($message)){
+				foreach($message['Message'] as $tag => $value) {		
+					$error_message .= $tag." : ".$value."\n";
+					$_ret->setData('Reason', $error_message);
+				}
+			}
+			else{
+				$_ret->setData('Reason', 'No error was returned');
 			}
 		}
 		return $_ret;
