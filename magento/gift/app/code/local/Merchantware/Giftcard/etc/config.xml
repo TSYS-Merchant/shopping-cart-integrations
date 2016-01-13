@@ -2,7 +2,7 @@
 <config>
   <modules>
     <Merchantware_Giftcard>
-      <version>0.1.0</version>
+      <version>1.0.0</version>
     </Merchantware_Giftcard>
   </modules>
   <global>
@@ -19,6 +19,13 @@
         </rewrite>
       </adminhtml>
     </blocks>
+    <blocks>
+		<sales>
+			<rewrite>
+			  <order_totals>Merchantware_Giftcard_Block_Sales_Order_Totals</order_totals>
+			</rewrite>
+		</sales>
+    </blocks>
     <helpers>
       <giftcard>
         <class>Merchantware_Giftcard_Helper</class>
@@ -28,6 +35,11 @@
       <giftcard>
         <class>Merchantware_Giftcard_Model</class>
       </giftcard>
+	  <sales>
+		  <rewrite>
+			  <order_invoice>Merchantware_Giftcard_Model_Sales_Model_Order_Invoice</order_invoice>
+		  </rewrite>
+	  </sales>
     </models>
     <events>
  	  <sales_order_payment_place_start>
