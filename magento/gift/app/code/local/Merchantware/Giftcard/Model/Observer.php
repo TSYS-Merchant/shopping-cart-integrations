@@ -8,6 +8,12 @@ class Merchantware_Giftcard_Model_Observer extends Varien_Object
 		$path = 'payment/merchantware_giftcard/'.$field;
 		return Mage::getStoreConfig($path);	
 	}
+    
+    public function getConfigDataDecrypt($field)
+	{
+		$path = 'payment/merchantware_giftcard/'.$field;
+		return Mage::helper('core')->decrypt(Mage::getStoreConfig($path));	
+	}
 
 	public function salesOrderPaymentPlaceStart($observer){
 
@@ -21,9 +27,9 @@ class Merchantware_Giftcard_Model_Observer extends Varien_Object
 		if($gcDiscount > 0){
 
 			$apiUrl = "https://ps1.merchantware.net/Merchantware/ws/ExtensionServices/v4/Giftcard.asmx?WSDL";
-			$merchName = $this->getConfigData("name");
-			$siteId = $this->getConfigData("site_id");
-			$key = $this->getConfigData("key");
+			$merchName = $this->getConfigDataDecrypt("name");
+			$siteId = $this->getConfigDataDecrypt("site_id");
+			$key = $this->getConfigDataDecrypt("key");
 				
 			// Create our soap client
 			$client = new SoapClient($apiUrl,array("trace"=>1));
@@ -101,9 +107,9 @@ class Merchantware_Giftcard_Model_Observer extends Varien_Object
 		if($gcDiscount > 0){
 			
 			$apiUrl = "https://ps1.merchantware.net/Merchantware/ws/ExtensionServices/v4/Giftcard.asmx?WSDL";
-			$merchName = $this->getConfigData("name");
-			$siteId = $this->getConfigData("site_id");
-			$key = $this->getConfigData("key");
+			$merchName = $this->getConfigDataDecrypt("name");
+			$siteId = $this->getConfigDataDecrypt("site_id");
+			$key = $this->getConfigDataDecrypt("key");
 
 			// Create our soap client
 			$client = new SoapClient($apiUrl,array("trace"=>1));

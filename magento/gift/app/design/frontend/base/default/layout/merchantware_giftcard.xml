@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+  <giftcard_index_balance>
+    <reference name="root">
+      <action method="setTemplate">
+        <template>page/3columns.phtml</template>
+      </action>
+    </reference>
+    <reference name="content">
+      <block type="giftcard/giftcard" name="giftcard" template="giftcard/balance.phtml"/>
+    </reference>
+  </giftcard_index_balance>
+  <checkout_cart_index>
+    <reference name="checkout.cart">
+      <block type="core/text_list" name="coupon.and.giftcard" as="coupon">
+        <action method="insert">
+          <block>checkout.cart.coupon</block>
+        </action>
+        <block type="giftcard/giftcard" name="giftcard" template="checkout/cart/giftcard.phtml" after="checkout.cart.coupon" />
+      </block>
+    </reference>
+  </checkout_cart_index>
+  <default>
+    <reference name="top.links">
+      <action method="addLink" translate="label title" module="customer">
+        <label>Gift Card Balance</label>
+        <url helper="core/url/getHomeUrl">giftcard/index/balance</url>
+        <title>Gift Card Balance</title>
+        <prepare>true</prepare>
+        <urlParams helper="core/url/getHomeUrl"/>
+        <position>200</position>
+      </action>
+    </reference>
+  </default>
+</layout>

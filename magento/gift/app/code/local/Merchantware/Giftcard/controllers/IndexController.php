@@ -35,6 +35,12 @@ class Merchantware_Giftcard_IndexController extends Mage_Core_Controller_Front_A
 		return Mage::getStoreConfig($path);	
 	}
 	
+    public function getConfigDataDecrypt($field)
+	{
+		$path = 'payment/merchantware_giftcard/'.$field;
+		return Mage::helper('core')->decrypt(Mage::getStoreConfig($path));	
+	}
+	
     /*  This action takes the gift card code from the form on the user's cart page 
 	    It must hit the API and verify that the code is correct.   If so, it stores 
 		the amount and code in session.   If not, then an error must be presented 
@@ -42,6 +48,14 @@ class Merchantware_Giftcard_IndexController extends Mage_Core_Controller_Front_A
     public function indexAction()
     {		
 		$session = Mage::getSingleton('core/session');
+		
+		if($session->getFormKey() !== $this->getRequest()->getParam('form_key'))
+		{
+			$error = $this->__('Balance Denyed');
+			$session->addError($error);
+			return;
+		}
+		
 		
 		// if we are removing this gift card from this order, unset them from session
         if ($this->getRequest()->getParam('remove') == "1") {
@@ -65,12 +79,12 @@ class Merchantware_Giftcard_IndexController extends Mage_Core_Controller_Front_A
 		else{
 	    	try {		
 				// get our gift code from the submitted form			
-		        $gcCode = (string) $this->getRequest()->getParam('giftcard_code');
+		        $gcCode = (string) str_replace(" ","",$this->getRequest()->getParam('giftcard_code'));
 
 				$apiUrl = "https://ps1.merchantware.net/Merchantware/ws/ExtensionServices/v4/Giftcard.asmx?WSDL";
-				$merchName = $this->getConfigData("name");
-				$siteId = $this->getConfigData("site_id");
-				$key = $this->getConfigData("key");
+				$merchName = $this->getConfigDataDecrypt("name");
+				$siteId = $this->getConfigDataDecrypt("site_id");
+				$key = $this->getConfigDataDecrypt("key");
 				
 				// Create our soap client
 				$client = new SoapClient($apiUrl,array("trace"=>1));
@@ -121,16 +135,26 @@ class Merchantware_Giftcard_IndexController extends Mage_Core_Controller_Front_A
 	public function balanceAction(){
 
 		$session = Mage::getSingleton('core/session');
+		
+		
 
 		if($this->getRequest()->getMethod() == "POST"){
+			
+			if($session->getFormKey() !== $this->getRequest()->getParam('form_key'))
+			{
+				$error = $this->__('Balance Denyed');
+				$session->addError($error);
+				return;
+			}
+			
 			try {		
 				// get our gift code from the submitted form			
-		        $gcCode = (string) $this->getRequest()->getParam('giftcard_code');
+		        $gcCode = (string) str_replace(" ","",$this->getRequest()->getParam('giftcard_code'));
 
 				$apiUrl = "https://ps1.merchantware.net/Merchantware/ws/ExtensionServices/v4/Giftcard.asmx?WSDL";
-				$merchName = $this->getConfigData("name");
-				$siteId = $this->getConfigData("site_id");
-				$key = $this->getConfigData("key");
+				$merchName = $this->getConfigDataDecrypt("name");
+				$siteId = $this->getConfigDataDecrypt("site_id");
+				$key = $this->getConfigDataDecrypt("key");
 				
 				// Create our soap client
 				$client = new SoapClient($apiUrl,array("trace"=>1));
